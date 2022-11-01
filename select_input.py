@@ -38,7 +38,7 @@ def process_function():
                 # Change to Lowercase to Troubleshoot
                 next_calculation = next_calculation.lower()
                 if next_calculation == "no":
-                    sure_function()
+                    True_exit = sure_function()
                     break
                 elif next_calculation == "yes":
                     break
@@ -56,9 +56,9 @@ def sure_function():
         True_exit = input("Are you sure? (yes/no): ")
         True_exit = True_exit.lower()
         if True_exit == "yes":
-            break
+            return "yes"
         elif True_exit == "no":
-            break
+            return "no"
         else:
             continue                   
         
