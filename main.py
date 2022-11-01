@@ -1,4 +1,5 @@
 import os
+import datetime
 
 if os.path.isfile("cal_log.txt"):
     cal_log = open('cal_log.txt', 'a')
@@ -41,20 +42,21 @@ while True:
 
         if choice == '1':
             print(num1, "+", num2, "=", add(num1, num2))
-            print(num1, "+", num2, "=", add(num1, num2), file = cal_log)
+            print(str(datetime.datetime.now()),"\n"+"add_function" , num1, "+", num2, "=", add(num1, num2), file = cal_log)
+
 
         elif choice == '2':
             print(num1, "-", num2, "=", subtract(num1, num2))
-            print(num1, "-", num2, "=", subtract(num1, num2), file = cal_log)
+            print(str(datetime.datetime.now()),"\n"+"subtract_function", num1, "-", num2, "=", subtract(num1, num2), file = cal_log)
 
         elif choice == '3':
             print(num1, "*", num2, "=", multiply(num1, num2))
-            print(num1, "*", num2, "=", multiply(num1, num2), file = cal_log)
-            
+            print(str(datetime.datetime.now()),"\n"+"multiply_function", num1, "*", num2, "=", multiply(num1, num2), file = cal_log)
+
         elif choice =='4':
             print(num1, "/", num2, "=", divide(num1,num2))
-            print(num1, "/", num2, "=", divide(num1,num2), file = cal_log)
-            
+            print(str(datetime.datetime.now()),"\n"+"divide_function", num1, "/", num2, "=", divide(num1,num2), file = cal_log)
+         
 
         # check if user wants another calculation
         # break the while loop if answer is no
