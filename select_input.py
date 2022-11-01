@@ -26,7 +26,6 @@ def process_function():
 
             if choice == '4' and num2 == 0:
                 print("Don't put a zero in the denominator")
-                print("{}\nDon't put a zero in the denominator user input num1 = {}, num2 = {} ".format(datetime.datetime.now(),num1, num2), file=error_log)
                 continue
             c.choice_cal(choice, num1, num2)
 
@@ -51,7 +50,6 @@ def process_function():
             
         else:
             print("Invalid Input")
-            print("{}\nInvalid Input user input choice = {}".format(datetime.datetime.now(), choice),file = error_log)
 
 def sure_function():
     while True:
