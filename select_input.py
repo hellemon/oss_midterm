@@ -1,0 +1,64 @@
+import os.path
+import Calculation as c
+import datetime
+
+
+
+if os.path.isfile("cal_log.txt"):
+    cal_log = open('cal_log.txt', 'a')
+else:
+    cal_log = open('cal_log.txt', 'w')
+if os.path.isfile('error_log.txt'):
+    error_log = open('error_log.txt', 'a')
+else:
+    error_log = open('error_log.txt', 'w')
+
+def process_function():
+    num1 = 0
+    num2 = 0
+    while True:
+        # take input from the user
+        choice = input("Enter choice(1/2/3/4): ")
+        # check if choice is one of the four options
+        if choice in ('1', '2', '3', '4'):
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+
+            if choice == '4' and num2 == 0:
+                print("Don't put a zero in the denominator")
+                continue
+            c.choice_cal(choice, num1, num2)
+
+            # check if user wants another calculation
+            # break the while loop if answer is no
+            next_calculation = ""
+            True_exit = ""
+            while True:
+                next_calculation = input("Let's do next calculation? (yes/no): ")
+                # Change to Lowercase to Troubleshoot
+                next_calculation = next_calculation.lower()
+                if next_calculation == "no":
+                    True_exit = sure_function()
+                    break
+                elif next_calculation == "yes":
+                    break
+                else:
+                    continue
+
+            if True_exit == "yes" and next_calculation == "no":
+                break
+            
+        else:
+            print("Invalid Input")
+
+def sure_function():
+    while True:
+        True_exit = input("Are you sure? (yes/no): ")
+        True_exit = True_exit.lower()
+        if True_exit == "yes":
+            return "yes"
+        elif True_exit == "no":
+            return "no"
+        else:
+            continue                   
+        
