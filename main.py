@@ -2,11 +2,17 @@ import os
 import datetime
 import Calculation as c
 
+# if not exist cal_log file and error_log file
 if os.path.isfile("cal_log.txt"):
     cal_log = open('cal_log.txt', 'a')
 else:
     cal_log = open('cal_log.txt', 'w')
-    
+
+if os.path.isfile('error_log.txt'):
+    error_log = open('error_log.txt', 'a')
+else:
+    error_log = open('error_log.txt', 'w')
+
 # Program make a simple calculator
 # This function adds two numbers
 def add(x, y):
@@ -55,6 +61,7 @@ while True:
         elif choice =='4':
             if num2 == 0:
                 print("Don't put a zero in the denominator")
+                print("{}\nDon't put a zero in the denominator user input num1 = {}, num2 = {} ".format(datetime.datetime.now(),num1, num2), file=error_log)
                 continue
             else:
                 print(num1, "/", num2, "=", c.divide(num1,num2))
@@ -95,3 +102,4 @@ while True:
 
     else:
         print("Invalid Input")
+        print("{}\nInvalid Input user input choice = {}".format(datetime.datetime.now(), choice),file = error_log)
