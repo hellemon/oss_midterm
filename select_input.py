@@ -18,6 +18,7 @@ def process_function():
     num2 = 0
     while True:
         # take input from the user
+        select_operation()
         choice = input("Enter choice(1/2/3/4): ")
         # check if choice is one of the four options
         if choice in ('1', '2', '3', '4'):
@@ -52,6 +53,8 @@ def process_function():
         else:
             print("Invalid Input")
             print("{}\nInvalid Input user input choice = {}".format(datetime.datetime.now(), choice),file = error_log)
+
+            
 def sure_function():
     while True:
         True_exit = input("Are you sure? (yes/no): ")
@@ -62,4 +65,10 @@ def sure_function():
             return "no"
         else:
             continue                   
-        
+
+def select_operation():
+    print("\nSelect operation.")
+    print("1.Add")
+    print("2.Subtract")
+    print("3.Multiply")
+    print("4.Divide") 

@@ -13,10 +13,4 @@ if os.path.isfile('error_log.txt'):
 else:
     error_log = open('error_log.txt', 'w')
 
-print("Select operation.")
-print("1.Add")
-print("2.Subtract")
-print("3.Multiply")
-print("4.Divide") 
-
 si.process_function()
