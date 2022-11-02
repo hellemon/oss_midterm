@@ -22,8 +22,21 @@ def process_function():
         choice = input("Enter choice(1/2/3/4): ")
         # check if choice is one of the four options
         if choice in ('1', '2', '3', '4'):
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            
+            num1 = (input("Enter first number: "))
+            if num1.isdigit == True:
+                num1 = float(num1)
+            else :
+                print("you must input number!!")
+                continue
+
+            num2 = (input("Enter second number: "))
+            if num2.isdigit == True:
+                num2 = float(num2)
+            else :
+                print("you must input number!!")
+                continue
+            
 
             if choice == '4' and num2 == 0:
                 print("Don't put a zero in the denominator")
