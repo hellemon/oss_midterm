@@ -29,7 +29,7 @@ def process_function():
                 print("Don't put a zero in the denominator")
                 print("{}\nDon't put a zero in the denominator user input num1 = {}, num2 = {} ".format(datetime.datetime.now(),num1, num2), file=error_log)
                 continue
-            c.choice_cal(choice, num1, num2)
+            answer = c.choice_cal(choice, num1, num2)
 
             # check if user wants another calculation
             # break the while loop if answer is no

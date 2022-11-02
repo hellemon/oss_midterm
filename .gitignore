@@ -1,0 +1,5 @@
+# all fotmat ignore
+*.txt # becase this is log.txt so not relative this project
+
+# folder file
+__pycache__/

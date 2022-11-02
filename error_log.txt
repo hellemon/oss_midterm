@@ -1,0 +1,4 @@
+2022-11-01 21:07:46.283957
+Don't put a zero in the denominator user input num1 = 3.0, num2 = 0.0 
+2022-11-01 21:07:49.147611
+Invalid Input user input choice = 6
