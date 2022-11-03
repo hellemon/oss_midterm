@@ -24,14 +24,14 @@ def process_function():
         if choice in ('1', '2', '3', '4'):
             
             num1 = (input("Enter first number: "))
-            if num1.isdigit == True:
+            if num1.isdigit() == True:
                 num1 = float(num1)
             else :
                 print("you must input number!!")
                 continue
 
             num2 = (input("Enter second number: "))
-            if num2.isdigit == True:
+            if num2.isdigit() == True:
                 num2 = float(num2)
             else :
                 print("you must input number!!")
@@ -42,24 +42,14 @@ def process_function():
                 print("Don't put a zero in the denominator")
                 print("{}\nDon't put a zero in the denominator user input num1 = {}, num2 = {} ".format(datetime.datetime.now(),num1, num2), file=error_log)
                 continue
+
             answer = c.choice_cal(choice, num1, num2)
 
             # check if user wants another calculation
             # break the while loop if answer is no
             next_calculation = ""
             True_exit = ""
-            while True:
-                next_calculation = input("Let's do next calculation? (yes/no): ")
-                # Change to Lowercase to Troubleshoot
-                next_calculation = next_calculation.lower()
-                if next_calculation == "no":
-                    True_exit = sure_function()
-                    break
-                elif next_calculation == "yes":
-                    break
-                else:
-                    continue
-
+            next_calculation, True_exit = next_cal()
             if True_exit == "yes" and next_calculation == "no":
                 break
             
@@ -84,4 +74,17 @@ def select_operation():
     print("1.Add")
     print("2.Subtract")
     print("3.Multiply")
-    print("4.Divide") 
+    print("4.Divide")
+
+def next_cal():
+    while True:
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        # Change to Lowercase to Troubleshoot
+        next_calculation = next_calculation.lower()
+        if next_calculation == "no":
+            True_exit = sure_function()
+            return next_calculation, True_exit
+        elif next_calculation == "yes":
+            return next_calculation, "0"
+        
+
